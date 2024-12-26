@@ -15,7 +15,7 @@ spec:
         app: ubuntu
     spec:
       containers:
-      - image: ubuntu:22.04
+      - image: ubuntu:24.04
         command:
           - "sleep"
           - "604800"

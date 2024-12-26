@@ -1,15 +1,23 @@
-apiVersion: v1
-kind: Pod
+apiVersion: apps/v1
+kind: Deployment
 metadata:
-  name: ubuntu
+  name: ubuntu-deployment
   labels:
     app: ubuntu
 spec:
-  containers:
-  - image: ubuntu:22.04
-    command:
-      - "sleep"
-      - "604800"
-    imagePullPolicy: IfNotPresent
-    name: ubuntu
-  restartPolicy: Always
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ubuntu
+  template:
+    metadata:
+      labels:
+        app: ubuntu
+    spec:
+      containers:
+      - image: ubuntu:22.04
+        command:
+          - "sleep"
+          - "604800"
+        imagePullPolicy: IfNotPresent
+        name: ubuntu

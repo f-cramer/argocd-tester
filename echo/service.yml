@@ -2,6 +2,9 @@ apiVersion: v1
 kind: Service
 metadata:
   name: echo
+  labels:
+    app.kubernetes.io/name: "echo"
+    app.kubernetes.io/version: "35"
 spec:
   type: LoadBalancer
   selector:

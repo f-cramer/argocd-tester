@@ -3,6 +3,8 @@ kind: Deployment
 metadata:
   name: echo
   labels:
+    app.kubernetes.io/name: "echo"
+    app.kubernetes.io/version: "35"
     app: echo
 spec:
   replicas: 1
